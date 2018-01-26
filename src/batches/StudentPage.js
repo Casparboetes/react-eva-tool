@@ -2,24 +2,21 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import BatchCategory from './BatchCategory'
-import LikeButton from '../components/LikeButton'
-import { toggleLikeBatch } from '../actions/batches'
 import './StudentPage.css'
 
 const PLACEHOLDER = 'http://via.placeholder.com/500x180?text=No%20Image'
 
 export const batchShape = PropTypes.shape({
     _id: PropTypes.string,
-    batchName: PropTypes.string.isRequired,
+    studentName: PropTypes.string.isRequired,
     photo: PropTypes.string,
     yellow: PropTypes.bool,
     red: PropTypes.bool,
+    remark: PropTypes.string,
     green: PropTypes.bool,
     startDate: PropTypes.string.isRequired,
-    endDate: PropTypes.string.isRequired,
-    liked: PropTypes.bool
 })
 
 class BatchItem extends PureComponent {
@@ -28,13 +25,8 @@ class BatchItem extends PureComponent {
     toggleLikeBatch: PropTypes.func.isRequired
   }
 
-  toggleLike = () => {
-    const { _id } = this.props
-    this.props.toggleLikeBatch(_id)
-  }
-
   render() {
-    const { _id, batchName, endDate, startDate, yellow, red, green, photo, liked } = this.props
+    const { _id, studentName, remark, startDate, yellow, red, green, photo } = this.props
     const categories = { yellow, red, green }
 
     return(
@@ -45,9 +37,7 @@ class BatchItem extends PureComponent {
             style={{ backgroundImage: `url(${photo || PLACEHOLDER })` }} />
 
           <h1>
-            <Link to={`/batches/${_id}`}>
-              {batchName}
-            </Link>
+              {studentName}
           </h1>
 
           <ul className="categories">
@@ -55,13 +45,9 @@ class BatchItem extends PureComponent {
           </ul>
         </header>
         <div>
-          <p>Batch starts on: { startDate }</p>
-          <p>Batch ends on: { endDate }</p>
+          <p>Started on: { startDate }</p>
         </div>
         <footer>
-          <LikeButton
-            onChange={this.toggleLike}
-            liked={liked}
           />
         </footer>
       </article>
@@ -70,7 +56,7 @@ class BatchItem extends PureComponent {
 }
 
 const mapDispatchToProps = {
-  toggleLikeBatch
+
 }
 
 export default connect(null, mapDispatchToProps)(BatchItem)

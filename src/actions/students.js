@@ -1,31 +1,31 @@
 import ApiClient from '../api/client'
 import { loading, loadError } from './loading'
 
-export const FETCHED_BATCHES = 'FETCHED_BATCHES'
-export const FETCHED_ONE_BATCH = 'FETCHED_ONE_BATCH'
+export const FETCHED_STUDENTS = 'FETCHED_STUDENTS'
+export const FETCHED_ONE_STUDENT = 'FETCHED_ONE_STUDENT'
 
 const api = new ApiClient()
 
-export const fetchBatches = () => {
+export const fetchStudents = () => {
   return dispatch => {
-    const path = '/batches'
+    const path = `/batches/students/`
     dispatch(loading(path, true))
 
     api.get(path)
-      .then(res => dispatch({ type: FETCHED_BATCHES, payload: res.body }))
+      .then(res => dispatch({ type: FETCHED_STUDENTS, payload: res.body }))
       .catch(err => dispatch(loadError(err)))
 
     dispatch(loading(path, false))
   }
 }
 
-export const fetchBatchById = (id) => {
+export const fetchStudentById = (id) => {
   return dispatch => {
-    const path = `/batches/${id}`
+    const path = `/batches/${id}/students/${id}`
     dispatch(loading(path, true))
 
     api.get(path)
-      .then(res => dispatch({ type: FETCHED_ONE_BATCH, payload: res.body }))
+      .then(res => dispatch({ type: FETCHED_ONE_STUDENT, payload: res.body }))
       .catch(err => dispatch(loadError(err)))
 
     dispatch(loading(path, false))
@@ -34,7 +34,7 @@ export const fetchBatchById = (id) => {
 
 // export const toggleLikeBatch = (batchId) => {
 //   return {
-//     type: 'TOGGLE_LIKE_BATCH',
+//     type: 'TOGGLE_LIKE_STUDENT',
 //     payload: batchId
 //   }
 // }
