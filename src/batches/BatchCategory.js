@@ -25,9 +25,9 @@ class BatchCategory extends PureComponent {
   renderLabel() {
     const { yellow, red, green } = this.props
 
-    if (yellow) return <span>Yellow</span>
-    if (red) return <span>Red</span>
-    if (green) return <span>green</span>
+    if (yellow) return <span>Ok</span>
+    if (red) return <span>Attention!</span>
+    if (green) return <span>Excellent</span>
 
     return null
   }

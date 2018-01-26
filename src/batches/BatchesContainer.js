@@ -24,8 +24,8 @@ class BatchesContainer extends PureComponent {
   render() {
     return (
       <div className="batches wrapper">
-        <header>
-          <Title content="Classes" />
+        <header className="nav">
+          <Title content="  Classes" />
         </header>
 
         <main>

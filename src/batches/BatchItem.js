@@ -6,10 +6,6 @@ import { Link } from 'react-router-dom'
 import BatchCategory from './BatchCategory'
 import './BatchItem.css'
 
-// const PLACEHOLDER = 'http://via.placeholder.com/500x180?text=No%20Image'
-// style={{ backgroundImage: `url(${photo || PLACEHOLDER })` }} />
-
-
 export const batchShape = PropTypes.shape({
     _id: PropTypes.string.isRequired,
     batchName: PropTypes.string.isRequired,
