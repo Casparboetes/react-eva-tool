@@ -1,6 +1,6 @@
 import { LOAD_ERROR, CLEAR_ERROR } from '../actions/loading'
 
-export default (state = ['Oooopsie!'], { type, payload } = {}) => {
+export default (state = ['Something went wrong!'], { type, payload } = {}) => {
   switch (type) {
     case LOAD_ERROR :
       if (payload instanceof Error) {

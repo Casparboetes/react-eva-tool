@@ -1,9 +1,9 @@
 @import "../styles/colors.sass"
 
-li.RecipeCategory
+li.BatchCategory
   list-style: none
   display: inline-block
-  border: 1px solid #cec
+  border: 2px solid #cec
   height: 1.8em
   text-align: center
   border-radius: 1.8em
@@ -21,7 +21,7 @@ li.RecipeCategory
     transition: text-indent 0.8s ease-out
 
   img
-    margin: 5px 0
+    margin: 6px 0
     height: 1em
 
   &:hover
@@ -32,15 +32,15 @@ li.RecipeCategory
     img
       margin: 5px 0 5px 10px
 
-  &.vegan
+  &.yellow
+    border-color: $yellow
+    color: $yellow
+
+
+  &.red
+    border-color: $red
+    color: $red
+
+  &.green
     border-color: $green
     color: $green
-
-
-  &.vegetarian
-    border-color: $orange
-    color: $orange
-
-  &.pescatarian
-    border-color: $blue
-    color: $blue

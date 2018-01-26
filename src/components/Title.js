@@ -1,7 +1,7 @@
 // src/components/Title.js
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import './Title.css'
+// import './Title.css'
 
 class Title extends PureComponent {
   static propTypes = {

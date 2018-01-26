@@ -1,15 +1,15 @@
-// src/reducers/recipes.test.js
+// src/reducers/batches.test.js
 
-import reducer, { recipes } from './recipes'
+import reducer, { batches } from './batches'
 
-describe('recipes reducer', () => {
-  const initialState = recipes
+describe('batches reducer', () => {
+  const initialState = batches
 
   it('returns an empty array for the initial state', () => {
     expect(reducer()).toEqual(initialState)
   })
 
-  describe('TOGGLE_LIKE_RECIPE', () => {
+  describe('TOGGLE_LIKE_BATCH', () => {
     const initialState = [
       {
         _id: 1234,
@@ -22,7 +22,7 @@ describe('recipes reducer', () => {
     ]
 
     const action = {
-      type: 'TOGGLE_LIKE_RECIPE',
+      type: 'TOGGLE_LIKE_BATCH',
       payload: 1234
     }
 
@@ -37,7 +37,7 @@ describe('recipes reducer', () => {
       }
     ]
 
-    it('toggles recipe.liked', () => {
+    it('toggles batch.liked', () => {
       expect(reducer(initialState, action)).toEqual(eventualState)
     })
   })
