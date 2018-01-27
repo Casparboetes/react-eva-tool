@@ -29,7 +29,7 @@ class BatchesContainer extends PureComponent {
         </header>
 
         <main>
-        <span>  {this.props.batches.map(this.renderBatch)} </ span>
+        { this.props.batches.map(this.renderBatch) }
         </main>
       </div>
     )

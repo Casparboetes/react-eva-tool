@@ -17,14 +17,14 @@ class StudentContainer extends PureComponent {
   }
 
   renderStudent = (student, index) => {
-    return <BatchItem key={index} { ...student } />
+    return <StudentItem key={index} { ...student } />
   }
 
   render() {
     return (
       <div className="students wrapper">
         <header className="nav">
-          <Title content="Class" />
+          <Title content="Students Overview" />
         </header>
 
         <main>
