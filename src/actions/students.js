@@ -6,9 +6,9 @@ export const FETCHED_ONE_STUDENT = 'FETCHED_ONE_STUDENT'
 
 const api = new ApiClient()
 
-export const fetchStudents = (batchId) => {
+export const fetchStudents = () => {
   return dispatch => {
-    const path = `/batches/${batchId}/students`
+    const path = `/students`
     dispatch(loading(path, true))
 
     api.get(path)
