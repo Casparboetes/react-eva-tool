@@ -30,8 +30,8 @@ class BatchItem extends PureComponent {
           </h1>
         </header>
         <div>
-          <p>Batch starts on: { startDate }</p>
-          <p>Batch ends on: { endDate }</p>
+          <p>Start date on: { startDate }</p>
+          <p>End date on: { endDate }</p>
         </div>
 
         <footer>
