@@ -1,4 +1,4 @@
-// src/batches/BatchItem.js
+// src/students/studentItem.js
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -8,7 +8,7 @@ import './BatchItem.css'
 
 export const batchShape = PropTypes.shape({
     _id: PropTypes.string.isRequired,
-    batchNum: PropTypes.string.isRequired,
+    batchNum: PropTypes.number.isRequired,
     yellow: PropTypes.bool,
     red: PropTypes.bool,
     green: PropTypes.bool,
