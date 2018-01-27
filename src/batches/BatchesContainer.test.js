@@ -6,10 +6,10 @@
 // import Title from '../components/Title'
 // import { batches } from '../reducers/batches'
 //
-describe('<BatchesContainer />', () => {
-  const shutup = true
-
-  it('shuts up', () => { expect(true).toEqual(shutup) })
+// describe('<BatchesContainer />', () => {
+//   const shutup = true
+//
+//   it('shuts up', () => { expect(true).toEqual(shutup) })
 
   // const container = shallow(<BatchesContainer batches={batches} />)
   //

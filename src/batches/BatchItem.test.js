@@ -7,7 +7,7 @@ import Yellow from '../images/yellow.svg'
 import Red from '../images/red.svg'
 
 const batch = {
-    batchName: 'Spanish Omelette',
+    batchNum: 'Spanish Omelette',
     summary: 'A traditional dish from Spanish cuisine called tortilla española or tortilla de patatas. It is an omelette made with eggs and potatoes, sometimes also with onion and/or chives or garlic; fried in oil and often served cold as an appetizer.',
     yellow: false,
     red: true,
@@ -22,7 +22,7 @@ describe('<BatchItem />', () => {
     expect(container).toHaveClassName('BatchItem')
   })
 
-  it('contains a the batchName', () => {
-    expect(container.find('h1')).toHaveText(batch.batchName)
+  it('contains a the batchNum', () => {
+    expect(container.find('h1')).toHaveText(batch.batchNum)
   })
 })

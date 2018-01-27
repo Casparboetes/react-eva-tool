@@ -8,7 +8,7 @@ import './BatchItem.css'
 
 export const batchShape = PropTypes.shape({
     _id: PropTypes.string.isRequired,
-    batchName: PropTypes.string.isRequired,
+    batchNum: PropTypes.string.isRequired,
     yellow: PropTypes.bool,
     red: PropTypes.bool,
     green: PropTypes.bool,
@@ -22,7 +22,7 @@ class BatchItem extends PureComponent {
   }
 
   render() {
-    const { _id, batchName ,endDate, startDate, yellow, red, green } = this.props
+    const { _id, batchNum ,endDate, startDate, yellow, red, green } = this.props
     const categories = { yellow, red, green }
 
     return(
@@ -30,7 +30,7 @@ class BatchItem extends PureComponent {
         <header>
           <h1>
             <Link to={`/batches/${_id}`}>
-              {batchName}
+              {batchNum}
             </Link>
           </h1>
 
