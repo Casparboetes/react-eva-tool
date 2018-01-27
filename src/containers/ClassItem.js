@@ -3,45 +3,43 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import BatchCategory from './BatchCategory'
+import EvaluationCategory from './EvaluationCategory'
 import './BatchItem.css'
 
-export const batchShape = PropTypes.shape({
+export const studentsShape = PropTypes.shape({
     _id: PropTypes.string.isRequired,
-    batchNum: PropTypes.number.isRequired,
+    studentName: PropTypes.string.isRequired,
+    photo: PropTypes.string,
     yellow: PropTypes.bool,
     red: PropTypes.bool,
     green: PropTypes.bool,
-    startDate: PropTypes.string.isRequired,
-    endDate: PropTypes.string.isRequired,
 })
 
-class BatchItem extends PureComponent {
+class ClassItem extends PureComponent {
   static propTypes = {
-    ...batchShape.isRequired,
+    ...studentShape.isRequired,
   }
 
   render() {
-    const { _id, batchNum ,endDate, startDate, yellow, red, green } = this.props
+    const { _id, studentName ,photo, yellow, red, green } = this.props
     const categories = { yellow, red, green }
 
     return(
-      <article className="BatchItem">
+      <article className="ClassItem">
         <header>
+        <div
+          className="cover"
+          style={{ backgroundImage: `url(${ photo })` }} />
           <h1>
-            <Link to={`/batches/${_id}`}>
-              {batchNum}
+            <Link to={`/batches/${ _id }/students/${ _id }`}>
+              {studentName}
             </Link>
           </h1>
 
           <ul className="categories">
-            <BatchCategory { ...categories } />
+            <EvaluationCategory { ...categories } />
           </ul>
         </header>
-        <div>
-          <p>Batch starts on: { startDate }</p>
-          <p>Batch ends on: { endDate }</p>
-        </div>
 
         <footer>
 
@@ -54,4 +52,4 @@ class BatchItem extends PureComponent {
 const mapDispatchToProps = {
 }
 
-export default connect(null, mapDispatchToProps)(BatchItem)
+export default connect(null, mapDispatchToProps)(ClassItem)

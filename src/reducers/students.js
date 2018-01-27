@@ -9,7 +9,7 @@ export default (state = [], { type, payload } = {}) => {
       return [payload].concat(state)
 
     case 'TOGGLE_LIKE_BATCH' :
-      return state.map((batch) => {
+      return state.map((student) => {
         if (student._id !== payload) return student
         return { ...student, liked: !student.liked }
       })

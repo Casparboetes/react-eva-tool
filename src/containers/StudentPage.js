@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 // import { Link } from 'react-router-dom'
-import BatchCategory from './BatchCategory'
+import EvaluationCategory from './EvaluationCategory'
 import './StudentPage.css'
 
 const PLACEHOLDER = 'http://via.placeholder.com/500x180?text=No%20Image'
@@ -35,20 +35,18 @@ class BatchItem extends PureComponent {
           <div
             className="cover"
             style={{ backgroundImage: `url(${photo || PLACEHOLDER })` }} />
-
-          <h1>
-              {studentName}
-          </h1>
-
-          <ul className="categories">
-            <BatchCategory { ...categories } />
-          </ul>
+              <h1>
+                {studentName}
+              </h1>
+                <ul className="categories">
+                  <EvaluationCategory { ...categories } />
+                </ul>
         </header>
-        <div>
-          <p>Started on: { startDate }</p>
-        </div>
+          <div>
+            <p>Started on: { startDate }</p>
+          </div>
         <footer>
-          />
+          
         </footer>
       </article>
     )
