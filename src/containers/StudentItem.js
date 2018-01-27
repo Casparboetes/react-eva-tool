@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import EvaluationCategory from './EvaluationCategory'
 import './BatchItem.css'
 
-export const studentsShape = PropTypes.shape({
+export const studentShape = PropTypes.shape({
     _id: PropTypes.string.isRequired,
     studentName: PropTypes.string.isRequired,
     photo: PropTypes.string,
@@ -15,7 +15,7 @@ export const studentsShape = PropTypes.shape({
     green: PropTypes.bool,
 })
 
-class ClassItem extends PureComponent {
+class StudentItem extends PureComponent {
   static propTypes = {
     ...studentShape.isRequired,
   }
@@ -25,7 +25,7 @@ class ClassItem extends PureComponent {
     const categories = { yellow, red, green }
 
     return(
-      <article className="ClassItem">
+      <article className="StudentItem">
         <header>
         <div
           className="cover"
@@ -52,4 +52,4 @@ class ClassItem extends PureComponent {
 const mapDispatchToProps = {
 }
 
-export default connect(null, mapDispatchToProps)(ClassItem)
+export default connect(null, mapDispatchToProps)(StudentItem)
