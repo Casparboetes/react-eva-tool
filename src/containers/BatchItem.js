@@ -24,7 +24,7 @@ class BatchItem extends PureComponent {
       <article className="BatchItem">
         <header>
           <h1>
-            <Link to={`/batches/${ _id }`}>
+            <Link to={`/batches/${ _id }/students`}>
             Batch {batchNum}
             </Link>
           </h1>
