@@ -2,20 +2,25 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
-import BatchesContainer from './batches/BatchesContainer'
-// import ClassPage from './batches/ClassPage'
-import StudentPage from './batches/StudentPage'
+import BatchPage from './containers/BatchesContainer'
+import StudentsPage from './containers/StudentContainer'
+import StudentPage from './containers/StudentPage'
+// import ClassPage from './containers/StudentPage'
+// import StudentPage from './containers/StudentPage'
 
 export default class Routes extends Component {
   render() {
     return (
       <div>
-        <Route exact path="/" component={BatchesContainer} />
-
-        <Route path="/batches/:batchId/students/" component={StudentPage} />
+        <Route exact path="/" component={BatchPage} />
+        <Route path="/batches/:batchId" component={StudentsPage} />
+        <Route path="/students/:studentId" component={StudentPage} />
       </div>
     )
   }
 }
 
-    // <Route path="/batches/:batchId" component={ClassPage} />
+  // <Route path="/batches/:studentId" component={StudentPage} />
+
+      // <Route path="/batches/:batchId/" component={BatchPage} />
+    // <Route path="/batches/:batchId" component={StudentsPage} />

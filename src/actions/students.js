@@ -8,7 +8,7 @@ const api = new ApiClient()
 
 export const fetchStudents = () => {
   return dispatch => {
-    const path = `/batches/${batchId}/students`
+    const path = `/`
     dispatch(loading(path, true))
 
     api.get(path)
@@ -19,9 +19,9 @@ export const fetchStudents = () => {
   }
 }
 
-export const fetchStudentById = (studentId, batchId) => {
+export const fetchStudentById = (studentId) => {
   return dispatch => {
-    const path = `/batches/${id}/students/${id}`
+    const path = `/students/${studentId}`
     dispatch(loading(path, true))
 
     api.get(path)
