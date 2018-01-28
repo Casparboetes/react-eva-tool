@@ -8,7 +8,7 @@ import './StudentPage.css'
 
 const PLACEHOLDER = 'http://via.placeholder.com/500x180?text=No%20Image'
 
-export const studentShape = PropTypes.shape({
+export const studentPageShape = PropTypes.shape({
     batch_id: PropTypes.ObjectId,
     studentName: PropTypes.string.isRequired,
     photo: PropTypes.string,
@@ -22,7 +22,7 @@ export const studentShape = PropTypes.shape({
 
 class StudentPage extends PureComponent {
   static propTypes = {
-    ...studentShape.isRequired,
+    ...studentPageShape.isRequired,
     toggleLikeBatch: PropTypes.func.isRequired
   }
 
@@ -31,27 +31,24 @@ class StudentPage extends PureComponent {
     const categories = { yellow, red, green }
 
     return(
-      <article className="BatchItem">
-        <Paper>
+      <article className="StudentPage">
           <header>
             <div
               className="cover"
               style={{ backgroundImage: `url(${photo || PLACEHOLDER })` }} />
-
-                <h1>
-                  {studentName}
-                </h1>
-                  <ul className="categories">
-                    <EvaluationCategory { ...categories } />
-                  </ul>
           </header>
             <div>
-              <p>Evalution on: { evaluationDate }</p>
+              <h1>
+                {studentName}
+              </h1>
+              <ul className="categories">
+                <EvaluationCategory { ...categories } />
+              </ul>
+                <p>Evalution on: { evaluationDate }</p>
             </div>
           <footer>
 
           </footer>
-        </Paper>
       </article>
     )
   }
