@@ -8,7 +8,7 @@ const api = new ApiClient()
 
 export const fetchStudents = () => {
   return dispatch => {
-    const path = `/students`
+    const path = `/`
     dispatch(loading(path, true))
 
     api.get(path)

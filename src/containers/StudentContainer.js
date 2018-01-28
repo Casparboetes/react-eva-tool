@@ -25,6 +25,7 @@ class StudentContainer extends PureComponent {
       <div className="students wrapper">
         <header className="nav">
           <Title content="Students Overview" />
+
         </header>
 
         <main>
