@@ -19,9 +19,9 @@ export const fetchBatches = () => {
   }
 }
 
-export const fetchBatchById = (batchId) => {
+export const fetchBatchById = (id) => {
   return dispatch => {
-    const path = `/batches/${batchId}`
+    const path = `/batches/${id}`
     dispatch(loading(path, true))
 
     api.get(path)

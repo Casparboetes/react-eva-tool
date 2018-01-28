@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import Green from '../images/checked.svg'
 import Red from '../images/warning-sign.svg'
 import Yellow from '../images/confused.svg'
-import './EvaluationCategory.css'
+import './BatchCategory.css'
 
-class EvaluationCategory extends PureComponent {
+class BatchCategory extends PureComponent {
   static propTypes = {
     yellow: PropTypes.bool,
     red: PropTypes.bool,
@@ -35,7 +35,7 @@ class EvaluationCategory extends PureComponent {
   classNames() {
     const { yellow, red, green } = this.props
 
-    const baseClass = 'EvaluationCategory'
+    const baseClass = 'BatchCategory'
 
     if (yellow) return baseClass + ' yellow'
     if (red) return baseClass + ' red'
@@ -58,4 +58,4 @@ class EvaluationCategory extends PureComponent {
   }
 }
 
-export default EvaluationCategory
+export default BatchCategory
