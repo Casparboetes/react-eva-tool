@@ -3,11 +3,15 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import BatchCategory from './BatchCategory'
 import './BatchItem.css'
 
 export const batchShape = PropTypes.shape({
     _id: PropTypes.string.isRequired,
-    batchNum: PropTypes.number.isRequired,
+    batchNum: PropTypes.string.isRequired,
+    yellow: PropTypes.bool,
+    red: PropTypes.bool,
+    green: PropTypes.bool,
     startDate: PropTypes.string.isRequired,
     endDate: PropTypes.string.isRequired,
 })
@@ -18,20 +22,25 @@ class BatchItem extends PureComponent {
   }
 
   render() {
-    const { _id, batchNum ,endDate, startDate } = this.props
+    const { _id, batchNum ,endDate, startDate, yellow, red, green } = this.props
+    const categories = { yellow, red, green }
 
     return(
       <article className="BatchItem">
         <header>
           <h1>
-            <Link to={`/batches/${ _id }`}>
-            Batch {batchNum}
+            <Link to={`/batches/${_id}`}>
+              {batchNum}
             </Link>
           </h1>
+
+          <ul className="categories">
+            <BatchCategory { ...categories } />
+          </ul>
         </header>
         <div>
-          <p>Start date on: { startDate }</p>
-          <p>End date on: { endDate }</p>
+          <p>Batch starts on: { startDate }</p>
+          <p>Batch ends on: { endDate }</p>
         </div>
 
         <footer>

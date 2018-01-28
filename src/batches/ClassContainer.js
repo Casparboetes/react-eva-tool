@@ -1,14 +1,15 @@
+// src/batches/BatchesContainer.js
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Title from '../components/Title'
-import StudentItem, { studentShape } from './StudentItem'
+import BatchItem, { batchShape } from './BatchItem'
 import { fetchStudents } from '../actions/students'
 import './BatchesContainer.css'
 
-class StudentContainer extends PureComponent {
+class BatchesContainer extends PureComponent {
   static propTypes = {
-    students: PropTypes.arrayOf(studentShape).isRequired,
+    batches: PropTypes.arrayOf(batchShape).isRequired,
   }
 
   componentWillMount() {
@@ -16,20 +17,19 @@ class StudentContainer extends PureComponent {
     this.props.fetch() // see mapDispatchToProps below
   }
 
-  renderStudent = (student, index) => {
-    return <StudentItem key={index} { ...student } />
+  renderBatch = (batch, index) => {
+    return <BatchItem key={index} { ...batch } />
   }
 
   render() {
     return (
-      <div className="students wrapper">
+      <div className="batches wrapper">
         <header className="nav">
-          <Title content="Students Overview" />
-
+          <Title content="Class" />
         </header>
 
         <main>
-          {this.props.students.map(this.renderStudent)}
+          {this.props.students.map(this.renderStudents)}
         </main>
       </div>
     )
@@ -44,4 +44,4 @@ const mapDispatchToProps = { fetch: fetchStudents }
 //   return { batches: store.batches }
 // }
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(BatchesContainer)
