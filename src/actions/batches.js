@@ -9,7 +9,6 @@ export const fetchBatches = () => {
   return dispatch => {
     const path = '/batches'
 
-
     api.get(path)
       .then(res => dispatch({ type: FETCHED_BATCHES, payload: res.body }))
       .catch(err => dispatch(err))
@@ -19,7 +18,6 @@ export const fetchBatches = () => {
 export const fetchBatchById = (batchId) => {
   return dispatch => {
     const path = `/batches/${batchId}`
-
 
     api.get(path)
       .then(res => dispatch({ type: FETCHED_ONE_BATCH, payload: res.body }))

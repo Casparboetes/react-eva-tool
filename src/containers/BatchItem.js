@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import './BatchItem.css'
 
 export const batchShape = PropTypes.shape({
-    _id: PropTypes.string.isRequired,
     batchNum: PropTypes.number.isRequired,
     startDate: PropTypes.string.isRequired,
     endDate: PropTypes.string.isRequired,
@@ -18,13 +17,13 @@ class BatchItem extends PureComponent {
   }
 
   render() {
-    const { _id, batchNum ,endDate, startDate } = this.props
+    const { batchNum ,endDate, startDate } = this.props
 
     return(
       <article className="BatchItem">
         <header>
           <h1>
-            <Link to={`/batches/${ _id }/students`}>
+            <Link to={`/students/batch/${ batchNum }`}>
             Batch {batchNum}
             </Link>
           </h1>

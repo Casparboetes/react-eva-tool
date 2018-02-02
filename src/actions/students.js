@@ -17,10 +17,20 @@ export const fetchStudents = () => {
 
 export const fetchStudentById = (studentId) => {
   return dispatch => {
-    const path = `/students/${studentId}`
+    const path = `/students/${ studentId }`
 
     api.get(path)
       .then(res => dispatch({ type: FETCHED_ONE_STUDENT, payload: res.body }))
+      .catch(err => dispatch(err))
+  }
+}
+
+export const fetchStudentsByBatchId = (batchId) => {
+  return dispatch => {
+    const path = `/students/batch/${ batchId }`
+
+    api.get(path)
+      .then(res => dispatch({ type: FETCHED_STUDENTS, payload: res.body }))
       .catch(err => dispatch(err))
   }
 }

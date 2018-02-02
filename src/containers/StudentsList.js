@@ -6,7 +6,7 @@ import StudentItem, { studentShape } from './StudentItem'
 import { fetchStudents } from '../actions/students'
 import './BatchesContainer.css'
 
-class StudentContainer extends PureComponent {
+class StudentsList extends PureComponent {
   static propTypes = {
     students: PropTypes.arrayOf(studentShape).isRequired,
   }
@@ -44,4 +44,4 @@ const mapDispatchToProps = { fetch: fetchStudents }
 //   return { batches: store.batches }
 // }
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(StudentsList)
