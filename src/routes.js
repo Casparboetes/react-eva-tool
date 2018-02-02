@@ -5,8 +5,6 @@ import { Route } from 'react-router-dom'
 import BatchPage from './containers/BatchesContainer'
 import StudentsPage from './containers/StudentContainer'
 import StudentPage from './containers/StudentPage'
-// import ClassPage from './containers/StudentPage'
-// import StudentPage from './containers/StudentPage'
 
 export default class Routes extends Component {
   render() {
@@ -19,8 +17,3 @@ export default class Routes extends Component {
     )
   }
 }
-
-  // <Route path="/batches/:studentId" component={StudentPage} />
-
-      // <Route path="/batches/:batchId/" component={BatchPage} />
-    // <Route path="/batches/:batchId" component={StudentsPage} />
