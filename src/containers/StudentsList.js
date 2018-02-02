@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Title from '../components/Title'
 import StudentItem, { studentShape } from './StudentItem'
-import { fetchStudents } from '../actions/students'
+import { fetchStudentsByBatchId, fetchStudents } from '../actions/students'
 import './BatchesContainer.css'
 
 class StudentsList extends PureComponent {
