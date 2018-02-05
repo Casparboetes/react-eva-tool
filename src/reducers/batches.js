@@ -10,12 +10,6 @@ export default (state = [], { type, payload } = {}) => {
     case FETCHED_ONE_BATCH :
       return [payload].concat(state)
 
-    case 'TOGGLE_LIKE_BATCH' :
-      return state.map((batch) => {
-        if (batch._id !== payload) return batch
-        return { ...batch, liked: !batch.liked }
-      })
-
     default :
       return state
   }

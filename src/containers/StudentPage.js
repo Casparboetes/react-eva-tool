@@ -9,10 +9,9 @@ import './StudentPage.css'
 const PLACEHOLDER = 'http://via.placeholder.com/500x180?text=No%20Image'
 
 export const studentPageShape = PropTypes.shape({
-    batch_id: PropTypes.ObjectId,
     studentName: PropTypes.string.isRequired,
+    batchNum: PropTypes.string.isRequired,
     photo: PropTypes.string,
-    _id: PropTypes.string,
     green: PropTypes.bool,
     yellow: PropTypes.bool,
     red: PropTypes.bool,
@@ -27,7 +26,7 @@ class StudentPage extends PureComponent {
   }
 
   render() {
-    const { batch_id, studentName, photo, _id, green, yellow, red, evaluationDate } = this.props
+    const { batchNum, studentName, photo, green, yellow, red, evaluationDate } = this.props
     const categories = { yellow, red, green }
 
     return(

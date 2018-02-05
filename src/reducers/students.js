@@ -1,20 +1,35 @@
-import { FETCHED_STUDENTS, FETCHED_ONE_STUDENT } from '../actions/students'
+import { FETCHED_STUDENTS, FETCHED_ONE_STUDENT, FETCHED_STUDENTS_BY_BATCHNUM } from '../actions/students'
 
 export default (state = [], { type, payload } = {}) => {
   switch (type) {
     case FETCHED_STUDENTS :
-      return payload.slice()
+      return payload.concat(state)
 
     case FETCHED_ONE_STUDENT :
       return [payload].concat(state)
 
-    case 'TOGGLE_LIKE_BATCH' :
-      return state.map((student) => {
-        if (student._id !== payload) return student
-        return { ...student, liked: !student.liked }
+    case FETCHED_STUDENTS_BY_BATCHNUM :
+      return state.map((batch) => {
+        if (batch.batchNum === payload.batchNum) {
+          return { ...payload }
+        }
+        return batch
       })
 
     default :
       return state
   }
 }
+
+// Thanks
+// case FETCHED_ONE_GAME :
+//   const gameIds = state.map(g => g._id)
+//   if (gameIds.indexOf(payload._id) < 0) {
+//     return [{ ...payload }].concat(state)
+//   }
+//   return state.map((game) => {
+//     if (game._id === payload._id) {
+//       return { ...payload }
+//     }
+//     return game
+//   })

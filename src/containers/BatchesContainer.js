@@ -13,8 +13,7 @@ class BatchesContainer extends PureComponent {
   }
 
   componentWillMount() {
-    //this.props.dispatch(fetchBatches())
-    this.props.fetch() // see mapDispatchToProps below
+    this.props.fetch()
   }
 
   renderBatch = (batch, index) => {

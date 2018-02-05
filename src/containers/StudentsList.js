@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Title from '../components/Title'
 import StudentItem, { studentShape } from './StudentItem'
-import { fetchStudentsByBatchId, fetchStudents } from '../actions/students'
+import { fetchStudents } from '../actions/students'
 import './BatchesContainer.css'
 
 class StudentsList extends PureComponent {
@@ -12,8 +12,7 @@ class StudentsList extends PureComponent {
   }
 
   componentWillMount() {
-    //this.props.dispatch(fetchBatches())
-    this.props.fetch() // see mapDispatchToProps below
+    this.props.fetch()
   }
 
   renderStudent = (student, index) => {
@@ -38,10 +37,5 @@ class StudentsList extends PureComponent {
 
 const mapStateToProps = ({ students }) => ({ students })
 const mapDispatchToProps = { fetch: fetchStudents }
-
-// Same as:
-// const mapStoreToProps = (store) => {
-//   return { batches: store.batches }
-// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StudentsList)

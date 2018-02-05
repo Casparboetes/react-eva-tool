@@ -49,7 +49,6 @@ class StudentItem extends PureComponent {
             <footer>
 
             </footer>
-
         </Paper>
       </article>
     )
