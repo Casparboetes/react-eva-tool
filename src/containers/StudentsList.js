@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Title from '../components/Title'
 import StudentItem, { studentShape } from './StudentItem'
-import { fetchStudents } from '../actions/students'
+import { fetchStudentsByBatchId } from '../actions/students'
 import './BatchesContainer.css'
 
 class StudentsList extends PureComponent {
@@ -11,8 +11,9 @@ class StudentsList extends PureComponent {
     students: PropTypes.arrayOf(studentShape).isRequired,
   }
 
+
   componentWillMount() {
-    this.props.fetch()
+    this.props.fetch(this.props.match.params.batchId)
   }
 
   renderStudent = (student, index) => {
@@ -36,6 +37,6 @@ class StudentsList extends PureComponent {
 }
 
 const mapStateToProps = ({ students }) => ({ students })
-const mapDispatchToProps = { fetch: fetchStudents }
+const mapDispatchToProps = { fetch: fetchStudentsByBatchId }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StudentsList)

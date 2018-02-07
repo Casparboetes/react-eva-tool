@@ -9,12 +9,7 @@ export default (state = [], { type, payload } = {}) => {
       return [payload].concat(state)
 
     case FETCHED_STUDENTS_BY_BATCHNUM :
-      return state.map((batch) => {
-        if (batch.batchNum === payload.batchNum) {
-          return { ...payload }
-        }
-        return batch
-      })
+      return payload
 
     default :
       return state
